@@ -24,6 +24,9 @@ function updatetask(n){
 
 let err = document.getElementById("err");
 function add(){
+
+    
+    localStorage.setItem('new', "old");
 if(inputbox.value===''){
 err.innerHTML="<p>Did your brain take a vacation? Enter a task before hitting Add!</p>"
 
@@ -78,7 +81,6 @@ show();
 
 function imgUpdate(days) {
     
-    localStorage.setItem('new', "old");
     let img = document.getElementById('img');
     if (days > 0) {
         img.src = 'src/20240812_184446.png';
