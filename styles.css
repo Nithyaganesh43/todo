@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+}
+.streak {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Space between days and image */
+}
+
+#days {
+
+    font-size: 30px;
+    font-weight: bolder;
+    margin: 0;
+    margin-top: 5px;
+}
+
+.streak img {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+}
+
+@media screen and (max-width: 600px) {
+    #days {
+        font-size: 20px; /* Adjust font size for smaller screens */
+    }
+}
+#about {
+    background-color: #3b3a3a;
+    color: #fff;
+    padding: 15px;
+    border-radius: 24px;
+    border-top-right-radius: 0px;
+    width: 200px;
+    position: absolute;
+    top: 40px;
+    right: 30px;
+    z-index: 1000;
+    display: none; /* Hide the div by default */
+}
+#miss {
+    background-color: #3b3a3a;
+    color: #fff;
+    padding: 10px;
+    border-radius: 24px;
+    border-bottom-right-radius: 0;
+    width: 96%;
+    margin-left: 2%;
+    position: absolute;
+    bottom: 10px;
+    z-index: 1000;
+    display: none; 
+
+}
+
+#miss h2 {
+    color: rgb(237, 73, 73);
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0;
+}
+#about h2 {
+    color: rgb(237, 73, 73);
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0;
+}
+
+#about p {
+    color: #fff;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+#about h3 {
+    color: #7ff7bf;
+    font-size: 12px;
+    margin-top: 5px;
+    right: 5px;
+    text-align: right;
+    cursor: pointer;
+}
+#err p {
+    margin-top: -20px;
+    margin-left: 5px;
+    color: rgb(201, 56, 3);
+    font-size: 15px;
+}
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #000000, #005fb2);
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center content vertically */
+    padding: 20px; /* Increased padding for better spacing */
+    box-sizing: border-box;
+}
+
+.todo {
+    width: 100%;
+    max-width: 540px;
+    background: #fff;
+    margin: 40px 20px; /* Adjusted for better mobile fit */
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Added subtle shadow for better focus */
+}
+
+.todo h2 {
+    color: #002765;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* This centers the text horizontally */
+    margin-bottom: 20px; /* Keeps the spacing consistent */
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-size: 14px; /* Changed from font-weight to font-size */
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 10px 25px; /* Increased padding for better tap target */
+    background: #85f09a;
+    color: #fff;
+    font-size: 20px; /* Adjusted size */
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+ul li {
+    list-style: none;
+    font-size: 17px;
+    padding: 10px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+ul li::before {
+    content: "";
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    top: 5px;
+    left: 8px;
+}
+
+ul li.checked {
+    color: #555;
+    text-decoration: line-through;
+}
+
+ul li.checked::before {
+    background-image: url(src/completed.jpg);
+}
+
+ul li span {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+ul li span:hover {
+    background: #edeef0;
+}

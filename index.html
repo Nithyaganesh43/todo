@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="streak">
+        <p id="days"></p>
+        <img id="img" src="./src/20240812_184806.png" alt="streak">
+        
+    </div>
+    <div id="miss"></div>
+    <div id="about">
+    </div>
+    <div class="container">
+        <div class="todo">
+            <h2>You Can Do It </h2>
+            <div class="row">
+                <input type="text" id="input" placeholder="Add a task">
+                <button onclick="add()">+</button>
+            </div>
+            <div id="err"></div>
+            <ul id="container">
+            </ul>
+        </div>
+    </div>
+    <script src="app.js"></script>
+    </body>
+</html>
