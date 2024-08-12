@@ -207,3 +207,11 @@ ul li span {
 ul li span:hover {
     background: #edeef0;
 }
+
+#done {
+    display: flex;
+    position: relative;
+    background: linear-gradient(90deg,#000000, #005fb2);
+    color: #edeef0;
+    font-size: 12px;
+}
