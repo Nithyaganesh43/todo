@@ -12,7 +12,7 @@ if (!localStorage.getItem("count")) {
     day1();
     localStorage.setItem('new', "yes");
     localStorage.setItem("count",0);
-}
+}day1()
 function day1(){
     let intro=document.getElementById("day1");
     intro.innerHTML=`<img src="./src/welcome.png" alt="">
@@ -46,6 +46,8 @@ agree.onclick=()=>{
     intro.style.display = 'none';
 }
 }
+
+
 
 function getCount(){
     return parseInt(localStorage.getItem("count"));
@@ -235,5 +237,23 @@ document.addEventListener('DOMContentLoaded', () => {
             }
     }
 
+    function mockDate(isoDateString) {
+        const mockDate = new Date(isoDateString);
     
-performDailyCheck();
+        window.Date = class extends Date {
+            constructor(...args) {
+                if (args.length) {
+                    return new Date(...args);
+                }
+                return mockDate;
+            }
+    
+            static now() {
+                return mockDate.getTime();
+            }
+        }; performDailyCheck();
+    }
+    
+    // Usage example:
+    mockDate('2024-08-15');
+   

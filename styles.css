@@ -19,7 +19,7 @@ body {
     width: 96%;
     margin-left: 2%;
     position: absolute;
-    top: 20%;
+    top: 35px;
     left: 0;
     right: 0;
     z-index: 1000;
@@ -98,6 +98,7 @@ body {
         font-size: 20px; /* Adjust font size for smaller screens */
     }
 }#about {
+    
     background-color: #3b3a3a;
     color: #fff;
     padding: 15px;
