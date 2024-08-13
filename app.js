@@ -16,25 +16,22 @@ if (!localStorage.getItem("count")) {
 function day1(){
     let intro=document.getElementById("day1");
     intro.innerHTML=`<img src="./src/welcome.png" alt="">
-        <h4 style='text-align:center;'>Hope this is your first day </h4>
-        <p>This app is designed to help you stay on top of your daily tasks and build a strong streak of consistency. By checking off your tasks each day, you’ll see your streak grow, motivating you to stay committed and organized.
+        <p>
+        This app is designed to help you stay on top of your daily tasks and build a strong streak of consistency. By checking off your tasks each day, you’ll see your streak grow, motivating you to stay committed and organized.
+        
+        <h3>Why Maintain a Streak?</h3>
+        <h3>Boost Motivation:</h3> Seeing your streak grow each day keeps you motivated and reminds you of your progress.
+        Build Good Habits: Consistent task completion helps in forming productive habits and achieving your goals.
+        Stay Accountable: A daily check-in ensures you’re staying on track and helps you manage your time effectively.
+        
+        How It Works:
+        <h3>Add Tasks:</h3> Enter your tasks for the day and keep track of what needs to be done.
+        Check Off Tasks: Mark tasks as complete as you go. Each completed task contributes to your streak.
+        Monitor Your Streak: Keep an eye on your streak count and work towards maintaining it every day.
 
-<h3 style='text-align:center;'>Why Maintain a Streak?</h3>
-
-<h3>Boost Motivation:</h3> Seeing your streak grow each day keeps you motivated and reminds you of your progress.
-Build Good Habits: Consistent task completion helps in forming productive habits and achieving your goals.
-Stay Accountable: A daily check-in ensures you’re staying on track and helps you manage your time effectively.
-How It Works:
-
-<h3>Add Tasks:</h3> Enter your tasks for the day and keep track of what needs to be done.
-Check Off Tasks: Mark tasks as complete as you go. Each completed task contributes to your streak.
-Monitor Your Streak: Keep an eye on your streak count and work towards maintaining it every day.
-
-
-<h3>Challenge:</h3>
-Complete your tasks every day and watch your streak grow! The more consistent you are, the more productive you’ll become. Can you keep up the streak and push your productivity to new heights? Click "Agree" to start your journey and accept the challenge. Let’s make every day count!
-
-</p>
+        <h3>Challenge:</h3>
+        Complete your tasks every day and watch your streak grow! The more consistent you are, the more productive you’ll become. Can you keep up the streak and push your productivity to new heights? Click "Agree" to start your journey and accept the challenge. Let’s make every day count!
+    </p>
             <button id="agree">Agree</button>`
 
             
@@ -273,7 +270,7 @@ function showDateLetterByLetter(element) {
         }
     }, 100); // Adjust the speed as needed
 }
-
+day1()
 function removeDateLetterByLetter(element) {
     const text = element.textContent;
     let index = text.length;

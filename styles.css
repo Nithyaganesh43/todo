@@ -38,53 +38,46 @@ body {
     width: 500px;
 }
 
-
-
-
 #day1 {
     background-color: #3b3a3a;
     color: #fff;
     padding: 10px;
     border-radius: 24px;
-    width: 96%;
-    margin: 2%;
-    position: absolute;
-    top: 15px;
-    left: 0;
-    right: 0;
+    width: 92%; /* Adjusted to fit better on mobile screens */
+    max-width: 400px; /* Optional: set a maximum width */
+    margin: 0 auto 10px; /* Center horizontally and add margin at the bottom */
+    position: fixed; /* Use fixed positioning to cover the screen */
+    top: 10px; /* Distance from the top */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust position to center horizontally */
     z-index: 1000;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     box-sizing: border-box;
     text-align: center; 
-   display: none; /* Hide the div by default */
-
+    display: none; /* Hide the div by default */
+    max-height: calc(100vh - 20px); /* Set a max height to fit within the viewport */
+    overflow-y: auto; /* Enable vertical scrolling */
 }
+
 #day1 img {
     width: 100%; /* Adjust width as needed */
     max-width: 250px; /* Optional: limit maximum width */
-    margin-bottom: 5px;
-    text-align: center;
-    align-items: center;
+    margin-bottom: 10px; /* Adjust margin as needed */
 }
 
-
-
-#day1 h3 ,h4 {
+#day1 h3, h4 {
     color: rgb(73, 237, 190);
     font-size: 20px;
-    margin-bottom: 5px;
-    text-align: left;
+    margin-bottom: 10px; /* Adjust margin as needed */
 }
 
 #day1 p {
     color: #fff;
     font-size: 15px;
     margin-bottom: 15px;
-    overflow-y: auto;
-    text-align: center;
 }
+
 
 #day1 button#agree {
     background-color: #3b3a3a;
@@ -93,8 +86,9 @@ body {
     border-radius: 24px;
     font-size: 16px;
     cursor: pointer;
-    align-self: center;
     border: none;
+    align-self: center;
+    margin-top: auto; /* Push the button to the bottom */
 }
 
 
