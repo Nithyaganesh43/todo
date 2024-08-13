@@ -46,7 +46,7 @@ agree.onclick=()=>{
     intro.style.display = 'none';
 }
 }
-day1()
+
 function getCount(){
     return parseInt(localStorage.getItem("count"));
 }
