@@ -9,10 +9,44 @@ console.log()
 //counting taske
 let count=getCount();
 if (!localStorage.getItem("count")) {
+    day1();
     localStorage.setItem('new', "yes");
     localStorage.setItem("count",0);
 }
+function day1(){
+    let intro=document.getElementById("day1");
+    intro.innerHTML=`<img src="./src/welcome.png" alt="">
+        <h3>hope this is your first day </h3>
+        <p>This app is designed to help you stay on top of your daily tasks and build a strong streak of consistency. By checking off your tasks each day, you’ll see your streak grow, motivating you to stay committed and organized.
 
+<h3>Why Maintain a Streak?</h3>
+
+<h4>Boost Motivation:</h4> Seeing your streak grow each day keeps you motivated and reminds you of your progress.
+Build Good Habits: Consistent task completion helps in forming productive habits and achieving your goals.
+Stay Accountable: A daily check-in ensures you’re staying on track and helps you manage your time effectively.
+How It Works:
+
+<h4>Add Tasks:</h4> Enter your tasks for the day and keep track of what needs to be done.
+Check Off Tasks: Mark tasks as complete as you go. Each completed task contributes to your streak.
+Monitor Your Streak: Keep an eye on your streak count and work towards maintaining it every day.
+
+
+<h3>Challenge:</h3>
+Complete your tasks every day and watch your streak grow! The more consistent you are, the more productive you’ll become. Can you keep up the streak and push your productivity to new heights? Click "Agree" to start your journey and accept the challenge. Let’s make every day count!
+
+</p>
+            <button id="agree">Agree</button>`
+
+            
+        intro.style.display = 'block';
+let agree = document.getElementById("agree")
+agree.onclick=()=>{
+    intro.innerHTML='';
+    
+    intro.style.display = 'none';
+}
+}
+day1()
 function getCount(){
     return parseInt(localStorage.getItem("count"));
 }
@@ -21,10 +55,9 @@ function updatetask(n){
     count = getCount();
 }
 
-
 let err = document.getElementById("err");
 function add(){
-
+   
     
     localStorage.setItem('new', "old");
 if(inputbox.value===''){
@@ -48,6 +81,7 @@ save();
 }
 
 container.addEventListener("click",function(e){
+
     if(e.target.tagName === "LI"){
         e.targer.classList.toggle("checked");
         save();
@@ -136,14 +170,19 @@ function performDailyCheck() {
 }
 
 
-
 onclick=()=>{
     miss.innerHTML=""
     miss.style.display = 'none';
 }
 //about streak
-
+document.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            add(); // Replace with the function you want to call
+        }
+    });
 document.addEventListener('DOMContentLoaded', () => {
+    
+    
     const img = document.getElementById('img');
     const div = document.getElementById('about');
     //lap ku

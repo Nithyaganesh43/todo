@@ -11,6 +11,63 @@ body {
     width: 100%;
     min-height: 100vh;
 }
+#day1 {
+    background-color: #3b3a3a;
+    color: #fff;
+    padding: 15px;
+    border-radius: 24px;
+    width: 96%;
+    margin-left: 2%;
+    position: absolute;
+    top: 20%;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    text-align: center; 
+   display: none; /* Hide the div by default */
+
+}
+#day1 img {
+    width: 100%; /* Adjust width as needed */
+    max-width: 300px; /* Optional: limit maximum width */
+    margin-bottom: 15px;
+    text-align: center;
+    align-items: center;
+}
+
+
+
+#day1 h3 ,h4 {
+    color: rgb(73, 237, 190);
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+#day1 p {
+    color: #fff;
+    font-size: 12px;
+    margin-bottom: 15px;
+    overflow-y: auto;
+    text-align: center;
+}
+
+#day1 button#agree {
+    background-color: #3b3a3a;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 24px;
+    font-size: 16px;
+    cursor: pointer;
+    align-self: center;
+    border: none;
+}
+
+
 .streak {
     position: absolute;
     top: 5px;
@@ -40,8 +97,7 @@ body {
     #days {
         font-size: 20px; /* Adjust font size for smaller screens */
     }
-}
-#about {
+}#about {
     background-color: #3b3a3a;
     color: #fff;
     padding: 15px;
@@ -153,17 +209,21 @@ input {
 button {
     border: none;
     outline: none;
-    padding: 10px 25px; /* Increased padding for better tap target */
-    background: #85f09a;
+    padding: 5px 20px; /* Increased padding for better tap target */
+    background: linear-gradient(125deg, #08a427, #b1fac1);
     color: #fff;
-    font-size: 20px; /* Adjusted size */
+    font-size: 50px; /* Adjusted size */
     cursor: pointer;
     border-radius: 40px;
+    
 }
-
+button:hover{
+     background: linear-gradient(100deg, #08a427, #b1fac1);
+   
+}
 ul li {
     list-style: none;
-    font-size: 17px;
+    font-size: 22px;
     padding: 10px 8px 12px 50px;
     user-select: none;
     cursor: pointer;
@@ -178,7 +238,7 @@ ul li::before {
     border-radius: 50%;
     background-size: cover;
     background-position: center;
-    top: 5px;
+    top: px;
     left: 8px;
 }
 
