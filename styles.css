@@ -11,15 +11,45 @@ body {
     width: 100%;
     min-height: 100vh;
 }
+#header {
+    position: absolute;
+    display: flex;
+}
+
+#cal {
+    width: 100%;
+    max-width: 50px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+#cal-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#date {
+    color: #fff;
+    font-size: 30px;
+    margin-left: 58px;
+    margin-top: -40px;
+    cursor: pointer;
+    width: 500px;
+}
+
+
+
+
 #day1 {
     background-color: #3b3a3a;
     color: #fff;
-    padding: 15px;
+    padding: 10px;
     border-radius: 24px;
     width: 96%;
-    margin-left: 2%;
+    margin: 2%;
     position: absolute;
-    top: 35px;
+    top: 15px;
     left: 0;
     right: 0;
     z-index: 1000;
@@ -33,8 +63,8 @@ body {
 }
 #day1 img {
     width: 100%; /* Adjust width as needed */
-    max-width: 300px; /* Optional: limit maximum width */
-    margin-bottom: 15px;
+    max-width: 250px; /* Optional: limit maximum width */
+    margin-bottom: 5px;
     text-align: center;
     align-items: center;
 }
@@ -43,14 +73,14 @@ body {
 
 #day1 h3 ,h4 {
     color: rgb(73, 237, 190);
-    font-size: 18px;
-    margin-bottom: 15px;
+    font-size: 20px;
+    margin-bottom: 5px;
     text-align: left;
 }
 
 #day1 p {
     color: #fff;
-    font-size: 12px;
+    font-size: 15px;
     margin-bottom: 15px;
     overflow-y: auto;
     text-align: center;
@@ -84,18 +114,18 @@ body {
     font-size: 30px;
     font-weight: bolder;
     margin: 0;
-    margin-top: 5px;
+    margin-top: 13px;
 }
 
 .streak img {
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     background-color: transparent;
 }
 
 @media screen and (max-width: 600px) {
     #days {
-        font-size: 20px; /* Adjust font size for smaller screens */
+        font-size: 35px; /* Adjust font size for smaller screens */
     }
 }#about {
     
@@ -155,7 +185,7 @@ body {
 }
 #err p {
     margin-top: -20px;
-    margin-left: 5px;
+    margin-left: 50px;
     color: rgb(201, 56, 3);
     font-size: 15px;
 }
@@ -224,8 +254,8 @@ button:hover{
 }
 ul li {
     list-style: none;
-    font-size: 22px;
-    padding: 10px 8px 12px 50px;
+    font-size: 20px;
+    padding: 10px 28px 12px 40px;
     user-select: none;
     cursor: pointer;
     position: relative;
@@ -239,7 +269,6 @@ ul li::before {
     border-radius: 50%;
     background-size: cover;
     background-position: center;
-    top: px;
     left: 8px;
 }
 

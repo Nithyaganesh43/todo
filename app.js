@@ -12,21 +12,21 @@ if (!localStorage.getItem("count")) {
     day1();
     localStorage.setItem('new', "yes");
     localStorage.setItem("count",0);
-}day1()
+}
 function day1(){
     let intro=document.getElementById("day1");
     intro.innerHTML=`<img src="./src/welcome.png" alt="">
-        <h3>hope this is your first day </h3>
+        <h4 style='text-align:center;'>Hope this is your first day </h4>
         <p>This app is designed to help you stay on top of your daily tasks and build a strong streak of consistency. By checking off your tasks each day, you’ll see your streak grow, motivating you to stay committed and organized.
 
-<h3>Why Maintain a Streak?</h3>
+<h3 style='text-align:center;'>Why Maintain a Streak?</h3>
 
-<h4>Boost Motivation:</h4> Seeing your streak grow each day keeps you motivated and reminds you of your progress.
+<h3>Boost Motivation:</h3> Seeing your streak grow each day keeps you motivated and reminds you of your progress.
 Build Good Habits: Consistent task completion helps in forming productive habits and achieving your goals.
 Stay Accountable: A daily check-in ensures you’re staying on track and helps you manage your time effectively.
 How It Works:
 
-<h4>Add Tasks:</h4> Enter your tasks for the day and keep track of what needs to be done.
+<h3>Add Tasks:</h3> Enter your tasks for the day and keep track of what needs to be done.
 Check Off Tasks: Mark tasks as complete as you go. Each completed task contributes to your streak.
 Monitor Your Streak: Keep an eye on your streak count and work towards maintaining it every day.
 
@@ -63,7 +63,7 @@ function add(){
     
     localStorage.setItem('new', "old");
 if(inputbox.value===''){
-err.innerHTML="<p>Did your brain take a vacation? Enter a task before hitting Add!</p>"
+err.innerHTML="<p> Enter a task before hitting Add!</p>"
 
 
 }
@@ -237,23 +237,76 @@ document.addEventListener('DOMContentLoaded', () => {
             }
     }
 
-    function mockDate(isoDateString) {
-        const mockDate = new Date(isoDateString);
+//cal
+document.getElementById('cal-img').addEventListener('click', function() {
+    toggleDate();
+});
+
+let showing = false;
+
+function toggleDate() {
+    const dateElement = document.getElementById('date');
     
-        window.Date = class extends Date {
-            constructor(...args) {
-                if (args.length) {
-                    return new Date(...args);
-                }
-                return mockDate;
-            }
-    
-            static now() {
-                return mockDate.getTime();
-            }
-        }; performDailyCheck();
+    if (!showing) {
+        showDateLetterByLetter(dateElement);
+    } else {
+        removeDateLetterByLetter(dateElement);
     }
     
+    showing = !showing;
+}
+
+function showDateLetterByLetter(element) {
+    const today = new Date();
+    const options = { day: 'numeric', month: 'short', year: 'numeric' };
+    const formattedDate = today.toLocaleDateString('en-US', options).replace(',', '');
+    
+    let index = 0;
+    element.textContent = '';
+    
+    const interval = setInterval(() => {
+        if (index < formattedDate.length) {
+            element.textContent += formattedDate[index];
+            index++;
+        } else {
+            clearInterval(interval);
+        }
+    }, 100); // Adjust the speed as needed
+}
+
+function removeDateLetterByLetter(element) {
+    const text = element.textContent;
+    let index = text.length;
+
+    const interval = setInterval(() => {
+        if (index > 0) {
+            element.textContent = text.slice(0, --index);
+        } else {
+            clearInterval(interval);
+        }
+    }, 100); // Adjust the speed as needed
+}
+
+
+
+
+    // function mockDate(isoDateString) {
+    //     const mockDate = new Date(isoDateString);
+    
+    //     window.Date = class extends Date {
+    //         constructor(...args) {
+    //             if (args.length) {
+    //                 return new Date(...args);
+    //             }
+    //             return mockDate;
+    //         }
+    
+    //         static now() {
+    //             return mockDate.getTime();
+    //         } 
+    //     }; performDailyCheck();
+    // }
+    performDailyCheck();
     // Usage example:
-    mockDate('2024-08-15');
+    // mockDate('2024-08-16');
    
