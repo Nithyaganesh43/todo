@@ -270,7 +270,6 @@ function showDateLetterByLetter(element) {
         }
     }, 100); // Adjust the speed as needed
 }
-day1()
 function removeDateLetterByLetter(element) {
     const text = element.textContent;
     let index = text.length;
