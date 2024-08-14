@@ -5,7 +5,7 @@ inputbox.onclick=()=>{
     
     err.innerHTML=""
 }
-console.log()
+//()
 //counting taske
 let count=getCount();
 if (!localStorage.getItem("count")) {
@@ -124,6 +124,8 @@ function imgUpdate(days) {
 }
 
 function countUpdate(days){
+    //.log(new Date().toDateString());
+    //.log("countUpdate running");
     let day = document.getElementById("days")
     day.innerHTML = days;
     imgUpdate(days);
@@ -137,34 +139,47 @@ function completed() {
 }
 
 function checkAndUpdateDays() {
+    
+//.log(new Date().toDateString());
+    //.log("checkAndUpdateDays running");
     const currentValue = completed();
     let days = parseInt(localStorage.getItem("days"), 10) || 0;
-    const lastCheck = localStorage.getItem('lastCheck');
     const yesterday = new Date();
-
+    const lastCheck = localStorage.getItem('lastCheck');
         yesterday.setDate(yesterday.getDate() - 1);
     const yesterdayString = yesterday.toDateString();
     //becouse if the user skiped a day in between
-    if(days>0 && lastCheck!==yesterdayString){
-        days = 0;
+    if(lastCheck!=yesterdayString){
+        localStorage.setItem("days", 0);
+        countUpdate(0);
+        //.log("checkAndUpdateDays if 1");
     }
-    if(currentValue== 0){
+    else if(currentValue== 0){
         days += 1;
-    }else{
-        days = 0;
-    }
+        //.log("checkAndUpdateDays if 2 :"+lastCheck+" "+yesterdayString);
+        
     localStorage.setItem("days", days.toString());
     countUpdate(days);
+    }else{
+        localStorage.setItem("days", 0);
+        countUpdate(0);
+        //.log("checkAndUpdateDays if else");
+    }
+    
 }
-
 function performDailyCheck() {
     const lastCheck = localStorage.getItem('lastCheck');
     const today = new Date().toDateString();
 
     if (lastCheck !== today) {
+        //.log("lastcheck not today");
         checkAndUpdateDays();
+        //.log("lastday check updated to today");
         localStorage.setItem('lastCheck', today);
-         
+        
+    }else{
+        
+    countUpdate(localStorage.getItem("days"));
     }
 }
 
@@ -173,6 +188,13 @@ onclick=()=>{
     miss.innerHTML=""
     miss.style.display = 'none';
 }
+
+
+
+
+
+
+
 //about streak
 document.addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {
@@ -222,72 +244,30 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
     
     function missed() {
-        if(localStorage.getItem("new")=="old" ){
+
+        let lastCheck = localStorage.getItem('Warning');
+        let thisday = new Date().toDateString();
+        if (lastCheck !== thisday) {
+            //.log(localStorage.getItem('Warning')+" "+thisday)
+            localStorage.setItem('Warning', thisday);
+        
+//.log(localStorage.getItem('Warning')+" "+thisday)
+            if(localStorage.getItem("new")=="old" ){
    
-        const randomIndex = Math.floor(Math.random() * 5); // Random number between 0 and 4
-        const randomMessage = messages[randomIndex];
-        miss.innerHTML = `
-            <h2>Streak missed</h2>
-            <p>${randomMessage}</p>
-        `;
-        miss.style.display = 'block';
-            }
-    }
-
-//cal
-document.getElementById('cal-img').addEventListener('click', function() {
-    toggleDate();
-});
-
-let showing = false;
-
-function toggleDate() {
-    const dateElement = document.getElementById('date');
-    
-    if (!showing) {
-        showDateLetterByLetter(dateElement);
-    } else {
-        removeDateLetterByLetter(dateElement);
-    }
-    
-    showing = !showing;
-}
-
-function showDateLetterByLetter(element) {
-    const today = new Date();
-    const options = { day: 'numeric', month: 'short', year: 'numeric' };
-    const formattedDate = today.toLocaleDateString('en-US', options).replace(',', '');
-    
-    let index = 0;
-    element.textContent = '';
-    
-    const interval = setInterval(() => {
-        if (index < formattedDate.length) {
-            element.textContent += formattedDate[index];
-            index++;
-        } else {
-            clearInterval(interval);
+                let randomIndex = Math.floor(Math.random() * 5); // Random number between 0 and 4
+                let randomMessage = messages[randomIndex];
+                miss.innerHTML = `
+                    <h2>Streak missed</h2>
+                    <p>${randomMessage}</p>
+                `;
+                miss.style.display = 'block';
+                    }
         }
-    }, 100); // Adjust the speed as needed
-}
-function removeDateLetterByLetter(element) {
-    const text = element.textContent;
-    let index = text.length;
 
-    const interval = setInterval(() => {
-        if (index > 0) {
-            element.textContent = text.slice(0, --index);
-        } else {
-            clearInterval(interval);
-        }
-    }, 100); // Adjust the speed as needed
-}
-
-
-
+    }
 
     // function mockDate(isoDateString) {
-    //     const mockDate = new Date(isoDateString);
+    //     let mockDate = new Date(isoDateString);
     
     //     window.Date = class extends Date {
     //         constructor(...args) {
@@ -302,7 +282,75 @@ function removeDateLetterByLetter(element) {
     //         } 
     //     }; performDailyCheck();
     // }
-    performDailyCheck();
-    // Usage example:
-    // mockDate('2024-08-16');
    
+    // // Usage example:
+    // mockDate('2024-08-13');
+
+
+
+    // countUpdate(localStorage.getItem("days"));
+    performDailyCheck();
+    
+
+
+
+
+
+
+
+
+
+
+
+    
+//cal
+document.getElementById('cal-img').addEventListener('click', function() {
+    toggleDate();
+});
+
+let showing = false;
+
+function toggleDate() {
+    let dateElement = document.getElementById('date');
+    
+    if (!showing) {
+        showDateLetterByLetter(dateElement);
+    } else {
+        removeDateLetterByLetter(dateElement);
+    }
+    
+    showing = !showing;
+}
+
+function showDateLetterByLetter(element) {
+    let today = new Date();
+    let options = { day: 'numeric', month: 'short', year: 'numeric' };
+    let formattedDate = today.toLocaleDateString('en-US', options).replace(',', '');
+    
+    let index = 0;
+    element.textContent = '';
+    
+    let interval = setInterval(() => {
+        if (index < formattedDate.length) {
+            element.textContent += formattedDate[index];
+            index++;
+        } else {
+            clearInterval(interval);
+        }
+    }, 100); // Adjust the speed as needed
+}
+function removeDateLetterByLetter(element) {
+    let text = element.textContent;
+    let index = text.length;
+
+    let interval = setInterval(() => {
+        if (index > 0) {
+            element.textContent = text.slice(0, --index);
+        } else {
+            clearInterval(interval);
+        }
+    }, 100); // Adjust the speed as needed
+}
+
+
+
