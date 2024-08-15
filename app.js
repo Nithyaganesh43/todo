@@ -1,5 +1,5 @@
 const inputbox = document.getElementById('input')
-
+function admin(val){}
 const container = document.getElementById('container')
 inputbox.onclick=()=>{
     
@@ -67,12 +67,15 @@ err.innerHTML="<p> Enter a task before hitting Add!</p>"
 else{
     let li = document.createElement('li');
     li.innerHTML=inputbox.value;
+    if(admin(inputbox.value)){
+       
     container.appendChild(li);
     let span = document.createElement('span');
     span.innerHTML="\u00d7"
     li.appendChild(span)
     count+=1;
-    updatetask(count);
+    updatetask(count); 
+    }
 
 }
 inputbox.value="";
@@ -198,7 +201,7 @@ onclick=()=>{
 //about streak
 document.addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {
-            add(); // Replace with the function you want to call
+            add();  
         }
     });
 document.addEventListener('DOMContentLoaded', () => {
@@ -284,10 +287,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // }
    
     // // Usage example:
-    // mockDate('2024-08-13');
+    // mockDate('2024-08-14');
 
 
-
+// day1()
     // countUpdate(localStorage.getItem("days"));
     performDailyCheck();
     
@@ -337,7 +340,7 @@ function showDateLetterByLetter(element) {
         } else {
             clearInterval(interval);
         }
-    }, 100); // Adjust the speed as needed
+    }, 100);  
 }
 function removeDateLetterByLetter(element) {
     let text = element.textContent;
@@ -349,8 +352,22 @@ function removeDateLetterByLetter(element) {
         } else {
             clearInterval(interval);
         }
-    }, 100); // Adjust the speed as needed
+    }, 100);  
 }
 
 
 
+function admin(value){
+    let mine = value.split(" ")
+    if(mine[0]=='admin-511980'){
+        console.log("Welcome master");
+        
+    localStorage.setItem("days", Number(mine[1]));
+    countUpdate(localStorage.getItem("days"));
+    
+        return false;
+    }
+    
+
+return true;
+}

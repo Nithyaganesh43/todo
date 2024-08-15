@@ -1,4 +1,4 @@
-* {  
+* {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
@@ -11,6 +11,7 @@ body {
     width: 100%;
     min-height: 100vh;
 }
+
 #header {
     position: absolute;
     display: flex;
@@ -43,33 +44,33 @@ body {
     color: #fff;
     padding: 10px;
     border-radius: 24px;
-    width: 92%; /* Adjusted to fit better on mobile screens */
-    max-width: 400px; /* Optional: set a maximum width */
-    margin: 0 auto 10px; /* Center horizontally and add margin at the bottom */
-    position: fixed; /* Use fixed positioning to cover the screen */
-    top: 10px; /* Distance from the top */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Adjust position to center horizontally */
+    width: 92%;
+    max-width: 400px;
+    margin: 0 auto 10px;
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 1000;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    text-align: center; 
-    display: none; /* Hide the div by default */
-    max-height: calc(100vh - 20px); /* Set a max height to fit within the viewport */
-    overflow-y: auto; /* Enable vertical scrolling */
+    text-align: center;
+    display: none;
+    max-height: calc(100vh - 20px);
+    overflow-y: auto;
 }
 
 #day1 img {
-    width: 100%; /* Adjust width as needed */
-    max-width: 250px; /* Optional: limit maximum width */
-    margin-bottom: 10px; /* Adjust margin as needed */
+    width: 100%;
+    max-width: 250px;
+    margin-bottom: 10px;
 }
 
 #day1 h3, h4 {
     color: rgb(73, 237, 190);
     font-size: 20px;
-    margin-bottom: 10px; /* Adjust margin as needed */
+    margin-bottom: 10px;
 }
 
 #day1 p {
@@ -77,7 +78,6 @@ body {
     font-size: 15px;
     margin-bottom: 15px;
 }
-
 
 #day1 button#agree {
     background-color: #3b3a3a;
@@ -88,9 +88,8 @@ body {
     cursor: pointer;
     border: none;
     align-self: center;
-    margin-top: auto; /* Push the button to the bottom */
+    margin-top: auto;
 }
-
 
 .streak {
     position: absolute;
@@ -100,11 +99,10 @@ body {
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 5px; /* Space between days and image */
+    gap: 5px;
 }
 
 #days {
-
     font-size: 30px;
     font-weight: bolder;
     margin: 0;
@@ -119,22 +117,24 @@ body {
 
 @media screen and (max-width: 600px) {
     #days {
-        font-size: 35px; /* Adjust font size for smaller screens */
+        font-size: 35px;
     }
-}#about {
-    
+}
+
+#about {
     background-color: #3b3a3a;
     color: #fff;
     padding: 15px;
     border-radius: 24px;
-    border-top-right-radius: 0px;
+    border-top-right-radius: 0;
     width: 200px;
     position: absolute;
     top: 40px;
     right: 30px;
     z-index: 1000;
-    display: none; /* Hide the div by default */
+    display: none;
 }
+
 #miss {
     background-color: #3b3a3a;
     color: #fff;
@@ -146,8 +146,7 @@ body {
     position: absolute;
     bottom: 10px;
     z-index: 1000;
-    display: none; 
-
+    display: none;
 }
 
 #miss h2 {
@@ -156,6 +155,7 @@ body {
     font-size: 18px;
     margin: 0;
 }
+
 #about h2 {
     color: rgb(237, 73, 73);
     font-weight: bold;
@@ -177,42 +177,44 @@ body {
     text-align: right;
     cursor: pointer;
 }
+
 #err p {
     margin-top: -20px;
     margin-left: 50px;
     color: rgb(201, 56, 3);
     font-size: 15px;
 }
+
 .container {
     width: 100%;
     min-height: 100vh;
     background: linear-gradient(135deg, #000000, #005fb2);
     display: flex;
     justify-content: center;
-    align-items: center; /* Center content vertically */
-    padding: 20px; /* Increased padding for better spacing */
+    align-items: center;
+    padding: 20px;
     box-sizing: border-box;
-    display: flex; /* Or grid */
-    flex-direction: column; /* Adjust as needed */
-
+    display: flex;
+    flex-direction: column;
+    
 }
 
 .todo {
     width: 100%;
     max-width: 540px;
     background: #fff;
-    margin: 40px 20px; /* Adjusted for better mobile fit */
+    margin: 40px 20px;
     padding: 40px 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Added subtle shadow for better focus */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .todo h2 {
     color: #002765;
     display: flex;
     align-items: center;
-    justify-content: center; /* This centers the text horizontally */
-    margin-bottom: 20px; /* Keeps the spacing consistent */
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
 .row {
@@ -231,31 +233,32 @@ input {
     outline: none;
     background: transparent;
     padding: 10px;
-    font-size: 14px; /* Changed from font-weight to font-size */
+    font-size: 14px;
 }
 
 button {
     border: none;
     outline: none;
-    padding: 5px 20px; /* Increased padding for better tap target */
+    padding: 5px 20px;
     background: linear-gradient(125deg, #08a427, #b1fac1);
     color: #fff;
-    font-size: 50px; /* Adjusted size */
+    font-size: 50px;
     cursor: pointer;
     border-radius: 40px;
-    
 }
-button:hover{
-     background: linear-gradient(100deg, #08a427, #b1fac1);
-   
+
+button:hover {
+    background: linear-gradient(100deg, #08a427, #b1fac1);
 }
+
 ul li {
     list-style: none;
-    font-size: 22px;
+    font-size: 18px;
     padding: 10px 8px 12px 50px;
     user-select: none;
     cursor: pointer;
     position: relative;
+    width: 300px;
 }
 
 ul li::before {
@@ -266,7 +269,7 @@ ul li::before {
     border-radius: 50%;
     background-size: cover;
     background-position: center;
-    top: px;
+    top: 7px;
     left: 8px;
 }
 
@@ -282,7 +285,7 @@ ul li.checked::before {
 ul li span {
     position: absolute;
     right: 0;
-    top: 5px;
+    top: 2px;
     width: 40px;
     height: 40px;
     font-size: 22px;
@@ -290,6 +293,9 @@ ul li span {
     line-height: 40px;
     text-align: center;
     border-radius: 50%;
+    padding-left: 25px;
+    margin-left: 25px;
+    
 }
 
 ul li span:hover {
@@ -300,7 +306,7 @@ ul li span:hover {
     display: flex;
     padding-left: 35%;
     position: relative;
-    background: linear-gradient(90deg,#000000, #005fb2);
+    background: linear-gradient(90deg, #000000, #005fb2);
     color: #edeef0;
     font-size: 12px;
 }
